@@ -10,7 +10,7 @@ class App
     {
         // echo "Selamat datang";
         $url = $this->parseUrl();
-        // var_dump($url);
+        //controller $url[0]
         //cek file controller dari url yg diinput ada atau tidak
         if (file_exists('../app/controllers/' . $url[0] . '.php')) {
             //kalo ada maka ditimpa controller defaultnya
@@ -23,7 +23,6 @@ class App
         //instansiasi supaya bisa panggil method si class nya
         $this->controller = new $this->controller;
 
-        //controller $url[0]
         //method $url[1]
         //kalo ada controllernya maka dipake
         if (isset($url[1])) {
@@ -38,7 +37,8 @@ class App
 
         //kelola parameter
         if (!empty($url)) {
-            # code...
+            //ambil data url
+            $this->params = array_values($url);
         }
     }
 
