@@ -1,6 +1,7 @@
 <?php
 class App
 {
+    //buat properti
     protected $controller = 'Home';
     protected $method = 'index';
     protected $params = [];
@@ -9,7 +10,14 @@ class App
     {
         // echo "Selamat datang";
         $url = $this->parseUrl();
-        var_dump($url);
+        // var_dump($url);
+        //cek file controller dari url yg diinput ada atau tidak
+        if (file_exists('../app/controllers/' . $url[0] . '.php')) {
+            //kalo ada maka ditimpa controller defaultnya
+            $this->controller = $url[0];
+            //menghilangkan url controllernya
+            unset($url[0]);
+        }
     }
 
     public function parseUrl()
