@@ -1,3 +1,4 @@
 folder public : file yg bisa diakses oleh user
 file .htaccess : buat atur blok akses user, modifikasi konfig dari server apache dan bisa dilakukan perfolder
 Options -Indexes : kalo ada user yg buka folder app atau folder yg ga punya index maka otomatis akan di blok
+class App dipanggil oleh file index.php yg ada di folder public
