@@ -23,7 +23,8 @@ class App
         //instansiasi supaya bisa panggil method si class nya
         $this->controller = new $this->controller;
 
-        //method
+        //controller $url[0]
+        //method $url[1]
         //kalo ada controllernya maka dipake
         if (isset($url[1])) {
             //cek methodnya ada ga di dalam controllernya
