@@ -9,11 +9,7 @@ class App
     {
         // echo "Selamat datang";
         $url = $this->parseUrl();
-        // var_dump($url);
-        if (file_exists('../app/controllers/' . $url[0] . '.php')) {
-            $this->controller = $url[0];
-            unset($url[0]);
-        }
+        var_dump($url);
     }
 
     public function parseUrl()
