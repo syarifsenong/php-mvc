@@ -18,6 +18,27 @@ class App
             //menghilangkan url controllernya
             unset($url[0]);
         }
+        //panggil controller
+        require_once '../app/controllers/' . $this->controller . '.php';
+        //instansiasi supaya bisa panggil method si class nya
+        $this->controller = new $this->controller;
+
+        //method
+        //kalo ada controllernya maka dipake
+        if (isset($url[1])) {
+            //cek methodnya ada ga di dalam controllernya
+            if (method_exists($this->controller, $url[1])) {
+                //kalo ada timpa methodnya
+                $this->method = $url[1];
+                //lalu unset si methodnya
+                unset($url[1]);
+            }
+        }
+
+        //kelola parameter
+        if (!empty($url)) {
+            # code...
+        }
     }
 
     public function parseUrl()
