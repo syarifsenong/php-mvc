@@ -14,10 +14,12 @@ class App
 
     public function parseUrl()
     {
-        if (isset($_GET['url'])) {
-            $url = rtrim($_GET['url'], '/');
-            $url = filter_var($url, FILTER_SANITIZE_URL);
-            $url = explode('/', $url);
+        // link : php-mvc/public/index.php?url=asd
+        if (isset($_GET['url'])) { //buat ambil kata asd setelah url 
+            $url = rtrim($_GET['url'], '/'); //buat ilangin simbol / yg dikanan
+            $url = filter_var($url, FILTER_SANITIZE_URL); //buat benerin url
+            // php-mvc/public/home/page/satu/dua
+            $url = explode('/', $url); //buat pecah url yg diketik setelah public
             return $url;
         }
     }
