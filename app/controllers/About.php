@@ -2,8 +2,8 @@
 
 class About
 {
-    public function index()
+    public function page()
     {
-        echo 'about/index';
+        echo 'about/page';
     }
 }
