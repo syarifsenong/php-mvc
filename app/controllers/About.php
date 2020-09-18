@@ -3,9 +3,9 @@
 class About
 {
 
-    public function index()
+    public function index($nama, $pekerjaan) //ambil input params dari url
     {
-        echo 'about/index';
+        echo "Halo nama saya $nama, saya adalah seorang $pekerjaan";
     }
 
     public function page()
