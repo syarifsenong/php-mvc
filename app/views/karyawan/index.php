@@ -1,3 +1,7 @@
-<div class="container">
-    <h1 class="mt-4">Data Karyawan</h1>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-6">
+            <h3>Daftar karyawan</h3>
+        </div>
+    </div>
 </div>
