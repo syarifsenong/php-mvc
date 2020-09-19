@@ -1,6 +1,6 @@
 <?php
 
-class About
+class About extends Controller //inheritance dari class Controller
 {
 
     public function index($nama = 'Syarif', $pekerjaan = 'Dev ') //ambil input params dari url
