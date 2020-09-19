@@ -18,4 +18,9 @@ class Karyawan_model
             "pekerjaan" => "Operator"
         ]
     ];
+
+    public function getAllKaryawan()
+    {
+        return $this->kry;
+    }
 }
