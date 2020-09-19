@@ -1,6 +1,6 @@
 <?php
 
-class Home
+class Home extends Controller //inheritance dari class Controller
 {
     public function index()
     {
