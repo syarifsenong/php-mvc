@@ -1,26 +1,27 @@
 <?php
 class Karyawan_model
 {
-    private $kry = [
-        [
-            "nama" => "Syarif",
-            "umur" => "24",
-            "pekerjaan" => "Developer"
-        ],
-        [
-            "nama" => "Senong",
-            "umur" => "25",
-            "pekerjaan" => "Admin"
-        ],
-        [
-            "nama" => "Fani",
-            "umur" => "23",
-            "pekerjaan" => "Operator"
-        ]
-    ];
+
+    private $dbh; //databse handler
+    private $stmt;
+
+    public function __construct()
+    {
+        //data source name
+        $dsn = 'mysql:host=localhost;dbname=phpmvc';
+        //konek db pake PDO
+        try {
+            $this->dbh = new PDO($dsn, 'root', '');
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
 
     public function getAllKaryawan()
     {
-        return $this->kry;
+
+        $this->stmt = $this->dbh->prepare('SELECT * FROM KARYAWAN');
+        $this->stmt->execute();
+        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
