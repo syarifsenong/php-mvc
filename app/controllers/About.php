@@ -17,6 +17,8 @@ class About extends Controller //inheritance dari class Controller
     public function page()
     {
         // echo 'about/page';
+        $this->view('templates/header'); //manggil template header
         $this->view('about/page'); //panggil view dar method view di class controller
+        $this->view('templates/footer'); //manggil template footer
     }
 }
